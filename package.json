@@ -31,5 +31,8 @@
 	"bugs": {
 		"url": "https://github.com/kenhoff/latte/issues"
 	},
-	"homepage": "https://github.com/kenhoff/latte#readme"
+	"homepage": "https://github.com/kenhoff/latte#readme",
+	"engines": {
+		"node": "^6.0.0"
+	}
 }
