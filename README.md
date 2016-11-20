@@ -43,7 +43,7 @@ GET -> gets info about a specific profile (name, image_url)
 
 ## todo
 
--   [ ] set up knex environment config (local development vs production)
+-   [x] set up knex environment config (local development vs production)
 -   [ ] set up knex migrations
 -   [ ] set up knex seedable data (sample profiles and posts)
 -   [ ] routes

@@ -1,42 +1,43 @@
 {
-  "name": "latte",
-  "version": "1.0.0",
-  "description": "The Spark Front End Web Development Social Network",
-  "main": "index.js",
-  "dependencies": {
-    "express": "^4.14.0",
-    "knex": "^0.12.6",
-    "pg": "^6.1.0"
-  },
-  "devDependencies": {
-    "sqlite3": "^3.1.8"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "test": "exit 0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kenhoff/latte.git"
-  },
-  "keywords": [
-    "spark",
-    "front",
-    "end",
-    "web",
-    "dev",
-    "development",
-    "social",
-    "network",
-    "class"
-  ],
-  "author": "kenhoff",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kenhoff/latte/issues"
-  },
-  "homepage": "https://github.com/kenhoff/latte#readme",
-  "engines": {
-    "node": "^6.0.0"
-  }
+	"name": "latte",
+	"version": "1.0.0",
+	"description": "The Spark Front End Web Development Social Network",
+	"main": "index.js",
+	"dependencies": {
+		"express": "^4.14.0",
+		"knex": "^0.12.6",
+		"pg": "^6.1.0"
+	},
+	"devDependencies": {
+		"sqlite3": "^3.1.8"
+	},
+	"scripts": {
+		"postinstall": "knex migrate:latest",
+		"start": "node index.js",
+		"test": "exit 0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kenhoff/latte.git"
+	},
+	"keywords": [
+		"spark",
+		"front",
+		"end",
+		"web",
+		"dev",
+		"development",
+		"social",
+		"network",
+		"class"
+	],
+	"author": "kenhoff",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/kenhoff/latte/issues"
+	},
+	"homepage": "https://github.com/kenhoff/latte#readme",
+	"engines": {
+		"node": "^6.0.0"
+	}
 }
