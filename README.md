@@ -20,9 +20,33 @@ GET -> gets a list of all users in the system
 
 GET -> gets info about a specific profile (name, image_url)
 
+## DB Schema
+
+### Posts
+
+-   datetime (ISO)
+-   id (serial autoincrementing int)
+-   content (text)
+
+### Profiles
+
+-   profile_id (string)
+-   name (string)
+-   photo_url (text)
+
 ## notes
 
 -   env vars - array of `profile_id`s and `profile_secrets`
 -   posting must post to a `profile_id`
 -   `profile_secret` must match `profile_id`
 -   manually create list of `profile_id`s and `profile_secret`s
+
+## todo
+
+-   [ ] set up knex environment config (local development vs production)
+-   [ ] set up knex migrations
+-   [ ] set up knex seedable data (sample profiles and posts)
+-   [ ] routes
+    -   [ ] GET request to get a list of all profiles
+    -   [ ] GET request to get a specific profile
+    -   [ ] POST request to update a profile field
