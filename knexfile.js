@@ -2,10 +2,8 @@
 
 module.exports = {
 	development: {
-		client: "sqlite3",
-		connection: {
-			filename: "./dev.db"
-		}
+		client: "postgresql",
+		connection: "postgres://localhost"
 	},
 	production: {
 		client: "postgresql",

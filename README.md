@@ -25,12 +25,13 @@ GET -> gets info about a specific profile (name, image_url)
 ### Posts
 
 -   datetime (ISO)
--   id (serial autoincrementing int)
+-   id (serial autoincrementing int) (primary key)
 -   content (text)
+-   profile (string) (foreign key)
 
 ### Profiles
 
--   profile_id (string)
+-   id (string) (primary key)
 -   name (string)
 -   photo_url (text)
 
@@ -44,9 +45,9 @@ GET -> gets info about a specific profile (name, image_url)
 ## todo
 
 -   [x] set up knex environment config (local development vs production)
--   [ ] set up knex migrations
--   [ ] set up knex seedable data (sample profiles and posts)
--   [ ] routes
+-   [x] set up knex migrations
+-   [x] set up knex seedable data (sample profiles and posts)
+-   routes
     -   [ ] GET request to get a list of all profiles
     -   [ ] GET request to get a specific profile
     -   [ ] POST request to update a profile field

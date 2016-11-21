@@ -13,6 +13,7 @@
 	},
 	"scripts": {
 		"postinstall": "knex migrate:latest",
+		"seed": "knex seed:run",
 		"start": "node index.js",
 		"test": "exit 0"
 	},
