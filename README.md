@@ -48,6 +48,8 @@ GET -> gets info about a specific profile (name, image_url)
 -   [x] set up knex migrations
 -   [x] set up knex seedable data (sample profiles and posts)
 -   routes
-    -   [ ] GET request to get a list of all profiles
-    -   [ ] GET request to get a specific profile
+    -   [x] GET request to get a list of all profiles
+    -   [x] GET request to get a specific profile
+    -   [ ] validate profile_secrets
     -   [ ] POST request to update a profile field
+    -   [ ] POST request to create a new post
