@@ -2,7 +2,6 @@ if (process.env.NODE_ENV != "production") {
 	require("dotenv").config();
 }
 const PROFILE_SECRETS = JSON.parse(process.env.PROFILE_SECRETS);
-console.log(PROFILE_SECRETS["reinhardt"]);
 const express = require("express");
 const knex = require("knex")(require("./knexfile.js")[process.env.NODE_ENV || "development"]);
 
@@ -59,7 +58,6 @@ app.get("/api/posts", function(req, res) {
 
 app.post("/api/posts", function(req, res) {
 	// if the profile_secret matches the profile_id, then create a profile with that name on it
-	console.log(req.body);
 	if (!("profile_id" in req.body)) {
 		// if there is no profile_id, throw an error
 		return res.status(400).send("You must include a profile_id to post to.");
@@ -70,8 +68,6 @@ app.post("/api/posts", function(req, res) {
 		// if there is no body, throw an error
 		return res.status(400).send("You must include a content field for your post's content.");
 	} else if (req.body.profile_secret != PROFILE_SECRETS[req.body.profile_id]) {
-		console.log(req.body.profile_secret);
-		console.log(PROFILE_SECRETS[req.body.profile_id]);
 		// unauthed
 		return res.status(401).send("You have the wrong profile_secret for the profile_id that you're trying to post to.");
 	} else {
