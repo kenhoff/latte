@@ -1,3 +1,5 @@
+console.log("running sample data seed...");
+
 const sampleProfiles = [{
 	id: "reinhardt",
 	name: "Reinhardt Wilhelm",
