@@ -50,6 +50,6 @@ GET -> gets info about a specific profile (name, image_url)
 -   routes
     -   [x] GET request to get a list of all profiles
     -   [x] GET request to get a specific profile
-    -   [ ] validate profile_secrets
-    -   [ ] POST request to update a profile field
-    -   [ ] POST request to create a new post
+    -   [x] validate profile_secrets
+    -   [x] POST request to update a profile field
+    -   [x] POST request to create a new post

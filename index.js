@@ -6,6 +6,8 @@ const express = require("express");
 const knex = require("knex")(require("./knexfile.js")[process.env.NODE_ENV || "development"]);
 
 const bodyParser = require("body-parser");
+const marked = require("marked");
+const fs = require("fs");
 
 let app = express();
 
@@ -16,8 +18,10 @@ app.use(bodyParser.urlencoded({
 
 const port = process.env.PORT || 1234;
 
+
 app.get("/", function(req, res) {
-	res.send("Hello!");
+	let indexHTML = marked(fs.readFileSync(__dirname + "/index.md").toString());
+	res.send(indexHTML);
 });
 
 app.get("/api/profiles", function(req, res) {
@@ -49,8 +53,6 @@ app.get("/api/profiles/:profile_id", function(req, res) {
 });
 
 app.post("/api/profiles/:profile_id", function(req, res) {
-	// TODO: make sure profile_id actually exists
-
 	// to create a new profile in the database, just send a post request, no name or photo_url necessary
 
 	// if the profile_secret matches the profile_id, then update the profile with the given fields (just name and photo_url)
