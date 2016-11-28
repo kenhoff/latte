@@ -311,6 +311,24 @@ $.ajax({
 // logs out something like [Object, Object, Object]...
 ```
 
+You can also get all of the posts from a specific user by specifying the "profile" query parameter:
+
+```javascript
+$.ajax({
+	url: "https://spark-class-social-network-api.hoff.tech/api/posts",
+	method: "GET",
+	data: {
+		profile: "ken"
+	}
+}).done(function(data) {
+	// the request has succeeded
+	console.log(data);
+}).fail(function(jqXHR, status, error) {
+	// the request has failed
+	console.log(error);
+});
+```
+
 #### POST /posts
 
 To create a new post, make a POST request to the /posts route, and include your profile_id, profile_secret, and content in the request body.
