@@ -9,6 +9,7 @@ Hi there! This is the documentation for the Spark Front End Web Development Soci
 -   [Profiles](#profiles)
 -   [Authentication](#authentication)
 -   [API Reference](#api-reference)
+-   [Help!](#help-)
 
 ## Getting Started
 
@@ -409,3 +410,11 @@ $.ajax({
 	console.log(error);
 })
 ```
+
+--------------------------------------------------------------------------------
+
+## Help!
+
+Having issues? I'm here to help! Just bug me on Slack, or shoot me an email at <mailto:ken@hoff.tech>.
+
+Totally likely that I've created all sorts of unexpected features (read: bugs) in the API. Bonus points for you if you think you've found one!
