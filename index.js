@@ -107,12 +107,30 @@ app.post("/api/profiles/:profile_id", function(req, res) {
 });
 
 app.get("/api/posts", function(req, res) {
-	knex.select().from("posts").limit(100).orderBy("datetime", "desc")
-		.then(function(posts) {
-			return res.status(200).json(posts);
-		}).catch(function(error) {
-			return res.status(500).send(error);
-		});
+	if ("profile" in req.query) {
+		knex.select()
+			.from("posts")
+			.limit(100)
+			.orderBy("datetime", "desc")
+			.where({
+				profile: req.query.profile
+			})
+			.then(function(posts) {
+				return res.status(200).json(posts);
+			}).catch(function(error) {
+				return res.status(500).send(error);
+			});
+	} else {
+		knex.select()
+			.from("posts")
+			.limit(100)
+			.orderBy("datetime", "desc")
+			.then(function(posts) {
+				return res.status(200).json(posts);
+			}).catch(function(error) {
+				return res.status(500).send(error);
+			});
+	}
 });
 
 app.post("/api/posts", function(req, res) {
